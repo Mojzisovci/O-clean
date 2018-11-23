@@ -1,41 +1,43 @@
+#define DHTPIN 30//missing pin
+#define DHTTYPE DHT11
+
+#define enginePin1 2 //is not used
+#define enginePin2 3
+
+#define distanceSensorTrigg1 22
+#define distanceSensorEcho1 24
+#define distanceSensorTrigg2 26
+#define distanceSensorEcho2 28
+#define distanceSensorTrigg3 30
+#define distanceSensorEcho3 32
+#define distanceSensorTrigg4 34
+#define distanceSensorEcho4 36
+
+#define servoPin1 10 //is not used
+#define servoPin2 11
+#define servoPin3 12
+#define servoPin4 13
+
+#define led1 7
+
 #include<DHT.h>
 
-
-const int enginePin1 = 2; //is not used
-const int enginePin2 = 3;
-
-const int distanceSensorTrigg1 = 22;
-const int distanceSensorEcho1 = 23;
-const int distanceSensorTrigg2 = 24;
-const int distanceSensorEcho2 = 25;
-const int distanceSensorTrigg3 = 26;
-const int distanceSensorEcho3 = 27;
-const int distanceSensorTrigg4 = 28;
-const int distanceSensorEcho4 = 29;
-
-const int servoPin1 = 10; //is not used
-const int servoPin2 = 11;
-const int servoPin3 = 12;
-const int servoPin4 = 13;
-
-const int tempSensor = 30; //is not used
-
-
-
-const int led1 = 7;
-
-
+DHT dht(DHTPIN, DHTTYPE);
 
 int distance1;
 int distance2;
 int distance3;
 int distance4;
 
-
+int temp;
+int humidity;
+int sensorPonoruValue;
 
 
 void setup() 
 {
+  dht.begin();
+  
   pinMode(enginePin1,OUTPUT);
   pinMode(enginePin2,OUTPUT);
   
@@ -49,17 +51,22 @@ void setup()
   pinMode(distanceSensorEcho3,INPUT);
   pinMode(distanceSensorTrigg4,OUTPUT);
   pinMode(distanceSensorEcho4,INPUT);
-  
-  pinMode(tempSensor, INPUT);
+
+  pinMode(A0,INPUT);
   
 }
 
 void loop() 
 {
-  distance1 = getDistanceFromSensor(distanceSensorTrigg1,distanceSensorEcho1);
+  
+  distance1 = getDistanceFromSensor(distanceSensorTrigg1,distanceSensorEcho1); //return distance
   distance2 = getDistanceFromSensor(distanceSensorTrigg2,distanceSensorEcho2);
   distance3 = getDistanceFromSensor(distanceSensorTrigg3,distanceSensorEcho3);
   distance4 = getDistanceFromSensor(distanceSensorTrigg4,distanceSensorEcho4);
+
+  temp = dht.readTemperature(); //return temp
+  humidity = dht.readHumidity(); //return humidity
+  sensorPonoruValue = analogRead(A0); //return ponor
 }
 
 int getDistanceFromSensor(int pinSensorTrigg, int pinSensorEcho)
@@ -72,9 +79,4 @@ int getDistanceFromSensor(int pinSensorTrigg, int pinSensorEcho)
   duration = (float)pulseIn(pinSensorEcho,HIGH) / 1000; //duration in second
   distance = (343 * 100 * duration) / 2; //get distance in centimeters
   return distance;
-}
-
-int getTemperature(int tempSensorPin)
-{
-  
 }
