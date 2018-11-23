@@ -1,19 +1,23 @@
 table{
-      table style=float:center;
 		  text-align: center;
-    	border: 1px solid #ccc;
+      color: white;
   		width: 35%;
-  		font-size: 1.5em;
+  		font-size: 6em;
+      margin-left:auto; 
+      margin-right:auto;
+      width: 400px;
+      height: 220px;
 }
 
 body{  
-       background-image: url("webdesign.png");
+       background-image: url("finalbg.png");
        background-attachment: fixed;
        background-position: center; 
+       background-repeat: no-repeat;
 }
 
 td{
-  background-color: #FF0040;
+  //background-color:  #B404AE;
 	font-size: .95em;x
 	border: 1px solid #ddd;
  	
@@ -21,7 +25,7 @@ td{
 }
 
 th{
-	  background-color: #8A0829;
+	  //background-color: #8A0829;
 	  padding: .625em;
   	text-align: center;
   	padding: .35em;
