@@ -1,0 +1,30 @@
+table{
+      table style=float:center;
+		  text-align: center;
+    	border: 1px solid #ccc;
+  		width: 35%;
+  		font-size: 1.5em;
+}
+
+body{  
+       background-image: url("webdesign.png");
+       background-attachment: fixed;
+       background-position: center; 
+}
+
+td{
+  background-color: #FF0040;
+	font-size: .95em;x
+	border: 1px solid #ddd;
+ 	
+
+}
+
+th{
+	  background-color: #8A0829;
+	  padding: .625em;
+  	text-align: center;
+  	padding: .35em;
+  	letter-spacing: .1em;
+  	text-transform: uppercase;
+}
