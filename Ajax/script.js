@@ -3,9 +3,9 @@ $(document).ready(function () {
     var html2 = "</td>";
     setInterval(function(){
         $.getJSON('data.json', function(jd) {
-        $('#1').replaceWith(html + jd.data + html2 );
+        $('#1').replaceWith(html + jd.data1 + html2 );
         $("#2").replaceWith(html + jd.data2 +html2 );
     });
-    }, 3000);
+    }, 1500);
 });
 
