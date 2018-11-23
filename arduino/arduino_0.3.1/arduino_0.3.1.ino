@@ -1,4 +1,4 @@
-#define DHTPIN 30//missing pin
+#define DHTPIN 38//missing pin
 #define DHTTYPE DHT11
 
 #define enginePin1 2 //is not used
@@ -33,6 +33,8 @@ int temp;
 int humidity;
 int sensorPonoruValue;
 
+int nejvetsiSranec = 0;
+
 
 void setup() 
 {
@@ -49,24 +51,48 @@ void setup()
   pinMode(distanceSensorEcho2,INPUT);
   pinMode(distanceSensorTrigg3,OUTPUT);
   pinMode(distanceSensorEcho3,INPUT);
-  pinMode(distanceSensorTrigg4,OUTPUT);
+  pinMode(distanceSensorTrigg4,OUTPUT); 
   pinMode(distanceSensorEcho4,INPUT);
 
   pinMode(A0,INPUT);
-  
+
+  Serial.begin(9600);
 }
 
-void loop() 
-{
-  
+void loop()
+{ 
   distance1 = getDistanceFromSensor(distanceSensorTrigg1,distanceSensorEcho1); //return distance
   distance2 = getDistanceFromSensor(distanceSensorTrigg2,distanceSensorEcho2);
   distance3 = getDistanceFromSensor(distanceSensorTrigg3,distanceSensorEcho3);
   distance4 = getDistanceFromSensor(distanceSensorTrigg4,distanceSensorEcho4);
-
+  
   temp = dht.readTemperature(); //return temp
   humidity = dht.readHumidity(); //return humidity
   sensorPonoruValue = analogRead(A0); //return ponor
+
+for(int a = 0; a < 256; a++)
+{
+  analogWrite(enginePin1, a);
+  analogWrite(enginePin2, a);
+  delay(10);
+}  
+for(int a = 255; a > 0; a--)
+{
+  analogWrite(enginePin1, a);
+  analogWrite(enginePin2, a);
+  delay(10);
+}
+
+  delay(10);
+  Serial.println(distance1);
+  Serial.println(distance2);
+  Serial.println(distance3);
+  Serial.println(distance4);
+  Serial.println(temp);
+  Serial.println(humidity);
+  Serial.println(sensorPonoruValue);
+  Serial.println("-------------------------------");
+  
 }
 
 int getDistanceFromSensor(int pinSensorTrigg, int pinSensorEcho)
