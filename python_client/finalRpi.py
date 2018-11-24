@@ -46,3 +46,6 @@ def serRead():
 
 def ardWrite(data5):
     ser.write(bytes(data5, 'utf-8'))
+
+ardRead()
+serRead()
