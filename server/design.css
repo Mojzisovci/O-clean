@@ -1,0 +1,43 @@
+table{
+		  text-align: center;
+      color: white;
+  		width: 35%;
+  		font-size: 44px;
+      margin-left:auto; 
+      margin-right:auto;
+      width: 480px;
+      height: 200px;
+      font-family: "Open Sans";
+
+
+}
+
+body{  
+       background-image: url("webfinal.png");
+       background-attachment: fixed;
+       background-position: center; 
+       background-repeat: no-repeat;
+}
+
+td{ 
+	font-size: .95em;
+	border: 1px;
+ 	
+
+}
+
+th{
+    padding: .625em;
+  	text-align: center;
+  	padding: .35em;
+  	letter-spacing: .1em;
+  	text-transform: uppercase;
+    text-decoration: underline;
+}
+
+label{
+    margin-left:auto;
+    margin-right:auto;
+    font-size: 44px;
+    color: white;
+}
