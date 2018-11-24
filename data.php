@@ -14,7 +14,6 @@ $data = [
 $json = json_encode($data);
 
 print($json);
-
 $port = 30025;
 $hostname = "10.10.4.149";
 $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);

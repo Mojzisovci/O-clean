@@ -7,7 +7,6 @@
  */
 
 echo 'Socket';
-$data = $_GET['name'];
-$myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
-fwrite($myfile, $data);
-fclose($myfile);
+$data = $_GET;
+$data = json_encode($data);
+file_put_contents('data.json', $data);
