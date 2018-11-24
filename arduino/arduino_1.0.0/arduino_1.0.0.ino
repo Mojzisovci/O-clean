@@ -103,7 +103,7 @@ void loop()
   serverTimer++;
   if(collectorTimer < 20000 && collectorTimer % 5000 == 0) //timer for 20 seconds = 20000 miliseconds
   {
-                                                                                                                        //turn on collector
+ /*                                                                                                                       //turn on collector
     servoRamp.write(39);
     delay(1000);
     servoCollector.write(140);
@@ -111,7 +111,7 @@ void loop()
     servoRamp.write(35);
     delay(1000);
     servoCollector.write(40);
-    delay(1000);
+    delay(1000);*/
   }
   if(serverTimer < 20000)
   {
@@ -157,8 +157,11 @@ void loop()
   
   
   Serial.println(1000 + temp); //ve stupnich celsia
+  delay(1000);
   Serial.println(2000 + engineSpeedL);
+  delay(1000);
   Serial.println(3000 + engineSpeedR);
+  delay(1000);
   Serial.println(4000 + (int)(min(min(distance1, distance2),min(distance3, distance4)) * 10)); //vzdalenost * 10 v centimetrech
   
 }
