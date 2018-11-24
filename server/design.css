@@ -20,16 +20,24 @@ body{
 }
 
 td{ 
-	font-size: .95em;x
+	font-size: .95em;
 	border: 1px;
  	
 
 }
 
 th{
-	  padding: .625em;
+    padding: .625em;
   	text-align: center;
   	padding: .35em;
   	letter-spacing: .1em;
   	text-transform: uppercase;
+    text-decoration: underline;
+}
+
+label{
+    margin-left:auto;
+    margin-right:auto;
+    font-size: 44px;
+    color: white;
 }
