@@ -2,11 +2,14 @@ table{
 		  text-align: center;
       color: white;
   		width: 35%;
-  		font-size: 6em;
+  		font-size: 44px;
       margin-left:auto; 
       margin-right:auto;
       width: 400px;
       height: 220px;
+      font-family: "Open Sans";
+
+
 }
 
 body{  
@@ -17,15 +20,13 @@ body{
 }
 
 td{
-  //background-color:  #B404AE;
 	font-size: .95em;x
-	border: 1px solid #ddd;
+	border: 1px ;
  	
 
 }
 
 th{
-	  //background-color: #8A0829;
 	  padding: .625em;
   	text-align: center;
   	padding: .35em;
