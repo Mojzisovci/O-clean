@@ -18,8 +18,10 @@ $port = 30025;
 $hostname = "10.10.4.149";
 $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
 //var_dump(socket_connect($socket, $hostname, $port));
-$conn = socket_connect($socket, $hostname, $port);
-if($conn) {
+
+if(socket_connect($socket, $hostname, $port)) {
     //var_dump(socket_connect($socket, $hostname, $port));
     socket_send($socket, $json, 100, null);
+}else{
+    socket_connect($socket, $hostname, $port);
 }

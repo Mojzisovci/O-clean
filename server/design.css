@@ -5,15 +5,15 @@ table{
   		font-size: 44px;
       margin-left:auto; 
       margin-right:auto;
-      width: 400px;
-      height: 220px;
+      width: 480px;
+      height: 200px;
       font-family: "Open Sans";
 
 
 }
 
 body{  
-       background-image: url("finalbg.png");
+       background-image: url("webfinal.png");
        background-attachment: fixed;
        background-position: center; 
        background-repeat: no-repeat;
