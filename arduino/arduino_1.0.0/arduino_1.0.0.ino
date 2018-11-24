@@ -160,10 +160,6 @@ void loop()
   Serial.println(2000 + engineSpeedL);
   Serial.println(3000 + engineSpeedR);
   Serial.println(4000 + (int)(min(min(distance1, distance2),min(distance3, distance4)) * 10)); //vzdalenost * 10 v centimetrech
-  Serial.println(distance1);
-  Serial.println(distance2);
-  Serial.println(distance3);
-  Serial.println(distance4);
   
 }
 
