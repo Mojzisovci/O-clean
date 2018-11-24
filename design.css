@@ -1,0 +1,35 @@
+table{
+		  text-align: center;
+      color: white;
+  		width: 35%;
+  		font-size: 44px;
+      margin-left:auto; 
+      margin-right:auto;
+      width: 400px;
+      height: 220px;
+      font-family: "Open Sans";
+
+
+}
+
+body{  
+       background-image: url("finalbg.png");
+       background-attachment: fixed;
+       background-position: center; 
+       background-repeat: no-repeat;
+}
+
+td{
+	font-size: .95em;x
+	border: 1px ;
+ 	
+
+}
+
+th{
+	  padding: .625em;
+  	text-align: center;
+  	padding: .35em;
+  	letter-spacing: .1em;
+  	text-transform: uppercase;
+}
