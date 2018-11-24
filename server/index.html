@@ -9,16 +9,32 @@
     <title>Hackathon</title>
     <script src="script.js"></script>
     <link rel="stylesheet" type="text/css" href="design.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
 </head>
-<body>   
+<body>
 <div>
     <table>
-        <tr><th>Senzors</th><th>Values</th></tr>
+        <tr><th border-radius: 15px;>Senzors</th><th>Values</th></tr>
         <tr><td class="sensor r">senzor 1</td><td class="senzor-data r" id="1">v1</td> </tr>
         <tr><td class="sensor r">senzor 2</td><td class="senzor-data r" id="2">v2</td></tr>
         <tr><td class="sensor r">senzor 3</td><td class="senzor-data r" id="3">v3</td></tr>
         <tr><td class="sensor r">senzor 4</td><td class="senzor-data r" id="4">v4</td></tr>
     </table>
+  
+<form method="post">
+  <div>
+    <label for="say">Write coordinate x: </label>
+    <input name="coo" id="x">
+  </div>
+  <div>
+    <label for="to">Write coordinate y: </label>
+    <input name="coo" id="y">
+  </div>
+  <div>
+    <button type="submit">Send values</button>
+  </div>
+</form>
+
 </div>
 </body>
 </html>

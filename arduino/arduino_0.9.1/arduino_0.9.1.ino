@@ -57,14 +57,14 @@ void setup()
 
   Serial.begin(9600);
   
-  analogWrite(enginePin1, 250); //engine start
-  analogWrite(enginePin2, 250);
+  analogWrite(enginePin1, 100); //engine start
+  analogWrite(enginePin2, 100);
 }
 
 void loop()
 { 
-  analogWrite(enginePin1, 250); //engine work
-  analogWrite(enginePin2, 250);
+  analogWrite(enginePin1, 100); //engine work
+  analogWrite(enginePin2, 100);
   
   distance1 = getDistanceFromSensor(distanceSensorTrigg1,distanceSensorEcho1); //return distance
   distance2 = getDistanceFromSensor(distanceSensorTrigg2,distanceSensorEcho2);
@@ -80,24 +80,24 @@ void loop()
   if(distance1 == min(min(distance1, distance2),min(distance3, distance4))&& distance1 > 10 && distance1 < 30)
   {
      //nejnizsi vykon levy motor
-     analogWrite(enginePin1, 100);
+     analogWrite(enginePin1, 50);
   }
   else if(distance2 == min(min(distance1, distance2),min(distance3, distance4))&& distance2 > 10 && distance2 < 20)
   {
     //maly vykon levy motor
-    analogWrite(enginePin1, 150);
+    analogWrite(enginePin1, 75);
     //collector on for 20 seconds
     collectorTimer = 0;
   }
   else if(distance3 == min(min(distance1, distance2),min(distance3, distance4))&& distance3 > 10 && distance3 < 30)
   {
     //nejnizsi vykon pravy motor
-    analogWrite(enginePin2, 100);
+    analogWrite(enginePin2, 50);
   }
   else if(distance4 == min(min(distance1, distance2),min(distance3, distance4))&& distance4 > 10 && distance4 < 20)
   {
     //maly vykon pravy motor
-    analogWrite(enginePin2, 150);
+    analogWrite(enginePin2, 75);
     //collector on for 20 seconds
     collectorTimer = 0;
   }
